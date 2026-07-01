@@ -13,23 +13,23 @@ Perform network discovery and identify active hosts, open ports, services, and o
 
 ## Commands Used
 
-**nmap -sn**
-**nmap**
-**nmap -sV**
-**nmap -O**
-**nmap -A**
+- **nmap -sn**
+- **nmap**
+- **nmap -sV**
+- **nmap -O**
+- **nmap -A**
 
 ## Result
 
 Successfully identified:
 
-Active hosts
+- Active hosts
 
-Open ports
+- Open ports
 
-Running services
+- Running services
 
-Operating system
+- Operating system
 
 ## Learning Outcome
 
