@@ -1,1 +1,10 @@
+Take screenshots of:
 
+Virtual lab setup
+Ping test
+Host discovery (nmap -sn)
+Port scan
+Service detection (nmap -sV)
+OS detection (nmap -O)
+Aggressive scan (nmap -A)
+Scan report (scan.txt)
