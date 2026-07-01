@@ -1,0 +1,178 @@
+## Objectives
+•	Discover live hosts on a network.
+•	Perform TCP port scanning.
+•	Identify running services and their versions.
+•	Detect the operating system of target machines.
+•	Save scan results for documentation and analysis.
+•	Understand the fundamentals of network reconnaissance in a controlled environment.
+
+## Lab Environment
+•	Attacker Machine: Kali Linux
+•	Target Machines: Ubuntu Server / Windows 10
+•	Virtualization Platform: VirtualBox
+•	Network Type: Host-Only Adapter (or Internal Network)
+•	Scanning Tool: Nmap
+
+## Tools Used
+•	Nmap
+•	Kali Linux
+•	VirtualBox
+•	Ubuntu Server
+•	Windows 7
+•	Linux Terminal
+
+## Nmap Commands Used
+nmap -sn 192.168.56.0/24
+nmap 192.168.56.102
+nmap -sV 192.168.56.102
+sudo nmap -O 192.168.56.102
+sudo nmap -A 192.168.56.102
+nmap -oA fullscan 192.168.56.102
+
+## Project Workflow
+1.	Set up a virtual network using VirtualBox.
+2.	Configure Kali Linux as the scanning machine.
+3.	Configure Ubuntu/Windows as target systems.
+4.	Verify network connectivity between virtual machines.
+5.	Perform host discovery using Nmap.
+6.	Scan for open TCP ports.
+7.	Detect running services and their versions.
+8.	Identify the operating system.
+9.	Save scan results in multiple formats.
+10.	Document findings with screenshots and reports.
+
+________________________________________
+Step 1: Install Software
+Download and install:
+•	VirtualBox
+•	Kali Linux
+•	Ubuntu Desktop
+•	Windows 10 (optional evaluation VM)
+________________________________________
+Step 2: Create Virtual Machines
+Create three VMs.
+VM	Purpose
+Kali Linux	Attacker
+Ubuntu	Target 1
+Windows	Target 2
+RAM
+•	Kali → 4 GB
+•	Ubuntu → 2 GB
+•	Windows → 4 GB
+________________________________________
+Step 3: Configure Network
+Open
+VirtualBox → Settings → Network
+Select
+Host-Only Adapter
+or
+Internal Network
+All VMs must be on the same network.
+Example
+Kali
+192.168.56.101
+Ubuntu
+192.168.56.102
+Windows
+192.168.56.103
+Verify connectivity
+ping 192.168.56.102
+________________________________________
+Step 4: Install Services on Ubuntu
+Install SSH
+sudo apt update
+sudo apt install openssh-server
+Install Apache
+sudo apt install apache2
+Start services
+sudo systemctl start ssh
+sudo systemctl start apache2
+________________________________________
+Step 5: Verify Services
+On Ubuntu
+ip a
+Find the IP address.
+________________________________________
+Step 6: Open Kali Terminal
+Check Nmap version
+nmap --version
+________________________________________
+Step 7: Host Discovery
+nmap -sn 192.168.56.0/24
+Expected output
+Host is up
+
+192.168.56.101
+
+192.168.56.102
+
+192.168.56.103
+________________________________________
+Step 8: Port Scan
+nmap 192.168.56.102
+Example output
+22/tcp open ssh
+
+80/tcp open http
+________________________________________
+Step 9: Service Detection
+nmap -sV 192.168.56.102
+Output
+22 OpenSSH
+
+80 Apache httpd
+________________________________________
+Step 10: OS Detection
+sudo nmap -O 192.168.56.102
+Output
+Linux 5.x
+________________________________________
+Step 11: Aggressive Scan
+sudo nmap -A 192.168.56.102
+This includes
+•	OS Detection
+•	Version Detection
+•	Traceroute
+•	Default NSE Scripts
+________________________________________
+Step 12: Save Results
+nmap -oN scan.txt 192.168.56.102
+XML
+nmap -oX scan.xml 192.168.56.102
+All formats
+nmap -oA fullscan 192.168.56.102
+________________________________________
+Step 13: Take Screenshots
+Capture:
+•	VM running
+•	Ping success
+•	Host discovery
+•	Port scan
+•	Service detection
+•	OS detection
+•	Saved scan file
+
+## Results
+The project successfully identified:
+•	Active hosts on the virtual network.
+•	Open TCP ports.
+•	Running network services.
+•	Service versions.
+•	Operating system information.
+•	Network topology within the lab environment.
+
+## Learning Outcomes
+Through this project, I gained practical experience in:
+•	Network reconnaissance
+•	Host discovery techniques
+•	Port scanning methodologies
+•	Service and version detection
+•	Operating system fingerprinting
+•	Nmap command-line usage
+•	Virtual lab setup using VirtualBox
+•	Cybersecurity documentation and reporting
+
+## Disclaimer
+This project was conducted in a controlled virtual laboratory environment for educational purposes only. All scans were performed on systems owned and configured within the lab. No unauthorized systems or public networks were scanned.
+
+
