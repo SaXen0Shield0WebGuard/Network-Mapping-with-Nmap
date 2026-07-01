@@ -1,0 +1,27 @@
+Network-Mapping-Nmap/
+
+│
+
+├── README.md
+
+├── screenshots/
+
+│      host-discovery.png
+
+│      port-scan.png
+
+│      service-scan.png
+
+│      os-detection.png
+
+│
+
+├── reports/
+
+│      scan.txt
+
+│      scan.xml
+
+│
+
+└── commands.md
