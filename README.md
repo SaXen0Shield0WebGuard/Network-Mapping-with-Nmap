@@ -13,11 +13,11 @@ Perform network discovery and identify active hosts, open ports, services, and o
 
 ## Commands Used
 
-nmap -sn
-nmap
-nmap -sV
-nmap -O
-nmap -A
+**nmap -sn**
+**nmap**
+**nmap -sV**
+**nmap -O**
+**nmap -A**
 
 ## Result
 
